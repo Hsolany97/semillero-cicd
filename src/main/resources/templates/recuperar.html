@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Recuperación | Semillero CI/CD</title>
+    <link rel="stylesheet" th:href="@{/css/app.css}">
+</head>
+<body>
+<main class="page">
+    <section class="card form-card">
+        <a class="back" href="/">← Inicio</a>
+        <span class="eyebrow">CASO E2E 02</span>
+        <h1>Recuperar contraseña</h1>
+        <p class="muted">Este será el reto que luego podrán automatizar los asistentes.</p>
+
+        <div class="alert success" th:if="${mensajeExito}" th:text="${mensajeExito}" data-cy="mensaje-recuperacion"></div>
+
+        <form th:action="@{/recuperar}" th:object="${recuperacionForm}" method="post" novalidate>
+            <label for="correo">Correo</label>
+            <input id="correo" type="email" th:field="*{correo}" data-cy="correo-recuperacion" autocomplete="email">
+            <small class="error" th:if="${#fields.hasErrors('correo')}" th:errors="*{correo}"></small>
+
+            <button class="button primary full" type="submit" data-cy="recuperar">Solicitar recuperación</button>
+        </form>
+
+        <p class="footer-link"><a href="/registro">Volver al registro</a></p>
+    </section>
+</main>
+</body>
+</html>

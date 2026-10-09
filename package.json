@@ -1,0 +1,14 @@
+{
+  "name": "semillero-cicd-e2e",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Pruebas E2E del proyecto semillero-cicd",
+  "scripts": {
+    "cy:open": "cypress open",
+    "cy:run": "cypress run",
+    "e2e": "cypress run"
+  },
+  "devDependencies": {
+    "cypress": "16.1.1"
+  }
+}

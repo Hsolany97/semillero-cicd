@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Registro | Semillero CI/CD</title>
+    <link rel="stylesheet" th:href="@{/css/app.css}">
+</head>
+<body>
+<main class="page">
+    <section class="card form-card">
+        <a class="back" href="/">← Inicio</a>
+        <span class="eyebrow">CASO E2E 01</span>
+        <h1>Registro de usuario</h1>
+        <p class="muted">Este formulario será el primer flujo automatizado con Cypress.</p>
+
+        <div class="alert success" th:if="${mensajeExito}" th:text="${mensajeExito}" data-cy="mensaje-exito"></div>
+
+        <form th:action="@{/registro}" th:object="${registroForm}" method="post" novalidate>
+            <label for="nombre">Nombre</label>
+            <input id="nombre" type="text" th:field="*{nombre}" data-cy="nombre" autocomplete="name">
+            <small class="error" th:if="${#fields.hasErrors('nombre')}" th:errors="*{nombre}"></small>
+
+            <label for="correo">Correo</label>
+            <input id="correo" type="email" th:field="*{correo}" data-cy="correo" autocomplete="email">
+            <small class="error" th:if="${#fields.hasErrors('correo')}" th:errors="*{correo}" data-cy="error-correo"></small>
+
+            <label for="password">Contraseña</label>
+            <input id="password" type="password" th:field="*{password}" data-cy="password" autocomplete="new-password">
+            <small class="error" th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></small>
+
+            <label for="confirmarPassword">Confirmar contraseña</label>
+            <input id="confirmarPassword" type="password" th:field="*{confirmarPassword}" data-cy="confirmar-password" autocomplete="new-password">
+            <small class="error" th:if="${#fields.hasErrors('confirmarPassword')}" th:errors="*{confirmarPassword}" data-cy="error-confirmar"></small>
+
+            <button class="button primary full" type="submit" data-cy="registrar">Registrar</button>
+        </form>
+
+        <p class="footer-link">¿Quieres probar el segundo flujo? <a href="/recuperar">Recuperar contraseña</a></p>
+    </section>
+</main>
+</body>
+</html>

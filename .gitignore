@@ -1,0 +1,13 @@
+HELP.md
+.gradle/
+build/
+out/
+.idea/
+*.iml
+.vscode/
+node_modules/
+cypress/screenshots/
+cypress/videos/
+.env
+.gradle-dist/
+.DS_Store

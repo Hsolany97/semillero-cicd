@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Semillero CI/CD</title>
+    <link rel="stylesheet" th:href="@{/css/app.css}">
+</head>
+<body>
+<main class="page">
+    <section class="hero card">
+        <span class="eyebrow">SEMILLERO · AUTOMATIZACIÓN</span>
+        <h1>Del código a producción</h1>
+        <p class="lead">Aplicación demostrativa para aprender pruebas automatizadas, E2E y CI/CD con un flujo pequeño y visible.</p>
+        <div class="flow" aria-label="Flujo de la demo">
+            <span>Spring Boot</span><b>→</b><span>JUnit</span><b>→</b><span>Cypress</span><b>→</b><span>GitHub Actions</span><b>→</b><span>Render</span>
+        </div>
+        <div class="actions">
+            <a class="button primary" href="/registro" data-cy="ir-registro">Probar registro</a>
+            <a class="button secondary" href="/recuperar" data-cy="ir-recuperar">Recuperar contraseña</a>
+        </div>
+    </section>
+</main>
+</body>
+</html>

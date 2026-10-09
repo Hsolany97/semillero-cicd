@@ -1,0 +1,9 @@
+.git
+.github
+.gradle
+.gradle-dist
+build
+node_modules
+cypress/screenshots
+cypress/videos
+.idea
